@@ -12,15 +12,22 @@ namespace ConsoleApp1
         {
             //Declaracion y inicializacion de lista de jugadores
             List<Equipo> equipos = new List<Equipo>();
+           
 
             //Declaracion y asignacion de valores jugadores
             //Declaracion de equipo
             Equipo jugador1 = new Equipo();
-
+            
+           
             equipos.Add(new Equipo());
             equipos[0].Nombre = "Guajolotes FC";
             equipos[0].CiudadOrigen = "MonTeJuana";
             equipos[0].Entrenador = "Javier Contreras";
+            equipos[0].estadio = new Estadio();
+            equipos[0].estadio.NombreEstadio = "Estadio 1 ";
+            equipos[0].estadio.Direccion = "Al fondo a la derecha";
+            equipos[0].estadio.Capacidad = 90000;
+            
             //Añadir Jugadores 
             equipos[0].Jugadores.Add(new Jugador("Kami Tokotori", "28"));
             equipos[0].Jugadores.Add(new Jugador("Tori Kamitori", "18"));
@@ -38,6 +45,8 @@ namespace ConsoleApp1
             equipos[1].Nombre = "Equipo sin nombrexd";
             equipos[1].CiudadOrigen = "Morelia Yucatan";
             equipos[1].Entrenador = "Siguririgu";
+            equipos[1].estadio = new Estadio();
+            equipos[1].estadio = null;
             //Añadir Jugadoreds 
             equipos[1].Jugadores.Add(new Jugador("Osbaldo moreno", "25"));
             equipos[1].Jugadores.Add(new Jugador("Spider man", "25"));
@@ -54,7 +63,17 @@ namespace ConsoleApp1
                 Console.WriteLine("Equipo: " + equipo.Nombre);
                 Console.WriteLine("Ciudad de origen " + equipo.Nombre);
                 Console.WriteLine("Entrenador " + equipo.Entrenador);
-
+                //If nulos por si no se añaden datos 
+                if (equipo.estadio != null)
+                {
+                    Console.WriteLine("Nombre estadio: " + equipo.estadio.NombreEstadio);
+                    Console.WriteLine("Direccion del estadio: " + equipo.estadio.Direccion);
+                    Console.WriteLine("Capacidad del estadio: " + equipo.estadio.Capacidad);
+                }
+                else
+                {
+                    Console.WriteLine("No se añadieron datos");
+                }
                 foreach (Jugador jugadores in equipo.Jugadores)
                 {
                     Console.WriteLine("Jugador " + jugadores.Nombre);

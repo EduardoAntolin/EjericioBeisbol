@@ -11,6 +11,7 @@ namespace ConsoleApp1
         public string Nombre { get; set; }
         public string CiudadOrigen { get; set; }
         public string Entrenador { get; set; }
+        public Estadio estadio { get; set; }
 
         public List<Jugador> Jugadores { get; set; }
 
